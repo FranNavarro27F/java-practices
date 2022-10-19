@@ -8,6 +8,8 @@ public class CuentaBancaria {
     public static final String TIPO_AHORRO= "ahorro";
     public static final String TIPO_NOMINA= "nómina";
 
+    final double COMISION= 1.2;
+
 
     //constructores ( los constructores no retornan nada )
     CuentaBancaria(String t, String tipo, double s){
@@ -37,7 +39,13 @@ public class CuentaBancaria {
         if(cantidad < 0){
             return;
         }
+        double comision= 0.0;
+
+        if(tipoDeCuenta.equals(TIPO_AHORRO)){
+            comision= COMISION;
+        }
         saldo -= cantidad;
+        saldo -= COMISION;
     }
 
     void ingresarDinero(double cantidad){
