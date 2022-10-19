@@ -4,6 +4,11 @@ public class CuentaBancaria {
     String tipoDeCuenta;
     double saldo;
 
+    //constantes
+    public static final String TIPO_AHORRO= "ahorro";
+    public static final String TIPO_NOMINA= "nómina";
+
+
     //constructores ( los constructores no retornan nada )
     CuentaBancaria(String t, String tipo, double s){
         titular= t;
@@ -12,9 +17,18 @@ public class CuentaBancaria {
 
     }
 
+    CuentaBancaria(String t, double s){
+        titular= t;
+        tipoDeCuenta= TIPO_AHORRO;
+        saldo= s;
+
+    }
+
+
+
     CuentaBancaria(){
-        tipoDeCuenta= "ahorro";
-        
+        tipoDeCuenta= TIPO_AHORRO;
+
     }
 
 
