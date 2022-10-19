@@ -35,7 +35,10 @@ public class Main {
        //
     //    CuentaBancaria cuentaDeJuan= new CuentaBancaria("Juan Martinez", "ahorro", 23_500);
 
-        CuentaBancaria cuentaDeMaria= new CuentaBancaria("Maria perez", CuentaBancaria.TIPO_AHORRO, 12_000);
+        // CuentaBancaria cuentaDeMaria= new CuentaBancaria("Maria perez", CuentaBancaria.TIPO_AHORRO, 12_000);
+        
+
+        CuentaBancaria vuentaDeAna= new CuentaBancaria("Ana García", TipoDeCuenta.AHORRO, 23_500);
         
 
         

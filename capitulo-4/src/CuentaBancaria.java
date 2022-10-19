@@ -1,35 +1,33 @@
 public class CuentaBancaria {
     //variables de instancia
     String titular;
-    String tipoDeCuenta;
+    TipoDeCuenta tipoDeCuenta;
     double saldo;
 
     //constantes
-    public static final String TIPO_AHORRO= "ahorro";
-    public static final String TIPO_NOMINA= "nómina";
+    // public static final String TIPO_AHORRO= "ahorro";
+    // public static final String TIPO_NOMINA= "nómina";
 
     final double COMISION= 1.2;
 
 
     //constructores ( los constructores no retornan nada )
-    CuentaBancaria(String t, String tipo, double s){
+    CuentaBancaria(String t, TipoDeCuenta tipo, double s){
         titular= t;
         tipoDeCuenta= tipo;
         saldo= s;
-
     }
 
     CuentaBancaria(String t, double s){
         titular= t;
-        tipoDeCuenta= TIPO_AHORRO;
+        tipoDeCuenta= TipoDeCuenta.AHORRO;
         saldo= s;
-
     }
 
 
 
     CuentaBancaria(){
-        tipoDeCuenta= TIPO_AHORRO;
+        tipoDeCuenta= TipoDeCuenta.AHORRO;
 
     }
 
@@ -39,13 +37,21 @@ public class CuentaBancaria {
         if(cantidad < 0){
             return;
         }
-        double comision= 0.0;
+        double comision= calcularComision();
 
-        if(tipoDeCuenta.equals(TIPO_AHORRO)){
-            comision= COMISION;
-        }
         saldo -= cantidad;
         saldo -= COMISION;
+    }
+
+    double calcularComision(){
+        switch (tipoDeCuenta) {
+            case AHORRO:
+                return COMISION;
+            case NOMINA:
+                return 0;
+            default:
+                return 0;
+        }
     }
 
     void ingresarDinero(double cantidad){
@@ -55,7 +61,7 @@ public class CuentaBancaria {
         saldo += cantidad;
     }
 
-    void cambiarTipoDeCuenta(String nuevoTipo){
+    void cambiarTipoDeCuenta(TipoDeCuenta nuevoTipo){
         tipoDeCuenta= nuevoTipo;
     }
 
