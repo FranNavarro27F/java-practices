@@ -12,23 +12,20 @@ public class CuentaBancaria {
 
 
     //constructores ( los constructores no retornan nada )
-    CuentaBancaria(String t, TipoDeCuenta tipo, double s){
-        titular= t;
-        tipoDeCuenta= tipo;
-        saldo= s;
+    CuentaBancaria(String titular, TipoDeCuenta tipo, double saldo){
+        this.titular= titular;
+        this.tipoDeCuenta= tipo;
+        this.saldo= saldo;
     }
 
-    CuentaBancaria(String t, double s){
-        titular= t;
-        tipoDeCuenta= TipoDeCuenta.AHORRO;
-        saldo= s;
+    CuentaBancaria(String titular, double saldo){
+        this(titular, TipoDeCuenta.AHORRO, saldo);
     }
 
 
 
     CuentaBancaria(){
-        tipoDeCuenta= TipoDeCuenta.AHORRO;
-
+        this("",TipoDeCuenta.AHORRO, 0);
     }
 
 

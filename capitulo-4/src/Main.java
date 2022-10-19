@@ -38,9 +38,18 @@ public class Main {
         // CuentaBancaria cuentaDeMaria= new CuentaBancaria("Maria perez", CuentaBancaria.TIPO_AHORRO, 12_000);
         
 
-        CuentaBancaria vuentaDeAna= new CuentaBancaria("Ana García", TipoDeCuenta.AHORRO, 23_500);
+        // CuentaBancaria vuentaDeAna= new CuentaBancaria("Ana García", TipoDeCuenta.AHORRO, 23_500);
         
+        Informador informador= new Informador();
+        informador.mostrarPorPantalla(3);
 
+        byte unByte= 2;
+        informador.mostrarPorPantalla(unByte);
+
+        informador.mostrarPorPantalla(5.3);
+
+        informador.mostrarPorPantalla("hola", informador.COLOR_ROJO);
+        informador.mostrarPorPantalla("hola");
         
     }
 }
